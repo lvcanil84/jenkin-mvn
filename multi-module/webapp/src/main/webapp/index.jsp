@@ -1,27 +1,18 @@
-<%@ page contentType="text/html; charset=UTF-8" %>
-<!DOCTYPE html>
 <html>
-<head>
-	<title>My Web Page</title>
-	<style type="text/css">
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-			background-color: blue;
-		}
-		.success-symbol {
-			font-size: 100px;
-			color: white;
-		}
-	</style>
-</head>
+<head><title>First JSP</title></head>
 <body>
-	<div class="container">
-		<div class="success-symbol">&#10004;</div>
-	</div>
+  <%
+    double num = Math.random();
+    if (num > 0.95) {
+  %>
+      <h2>You'll have a luck day!</h2><p>(<%= num %>)</p>
+  <%
+    } else {
+  %>
+      <h2>Pipeline Successful </h2><p>(<%= num %>)</p>
+  <%
+    }
+  %>
+  <a href="<%= request.getRequestURI() %>"><h3>Try Again</h3></a>
 </body>
 </html>
-
